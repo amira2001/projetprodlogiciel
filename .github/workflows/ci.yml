@@ -63,7 +63,7 @@ jobs:
   sonarqube:
     name: SonarQube Analysis
     runs-on: ubuntu-latest
-    needs: test
+    needs: Clover Coverage
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -93,4 +93,4 @@ jobs:
       - name: Run SonarQube Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=amira2001_projetprodlogiciel
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.clover.reportPath=target/site/clover/clover.xml -Dsonar.projectKey=amira2001_projetprodlogiciel
