@@ -93,4 +93,4 @@ jobs:
       - name: Run SonarQube Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \ -Dsonar.projectKey=amira2001_projetprodlogiciel \ -Dsonar.cpd.exclusions=""
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=amira2001_projetprodlogiciel -Dsonar.cpd.exclusions=""
